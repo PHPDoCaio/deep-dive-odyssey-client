@@ -20,7 +20,15 @@ export default function Home() {
           </TabsTrigger>
         </TabsList>
         <TabsContent value="all-regions">
-          <CardsWrapper data={[]} />
+          <CardsWrapper
+            data={[
+              {
+                link: "/",
+                animalOrPlantName: "oi",
+                region: "oi",
+              },
+            ]}
+          />
         </TabsContent>
         <TabsContent value="baffin">
           <CardsWrapper data={[]} />

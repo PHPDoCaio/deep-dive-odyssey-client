@@ -11,14 +11,14 @@ export default function TopAppBar() {
 
   return (
     <>
-      <nav className="px-4 py-2 w-full bg-brandingColor-900 flex justify-between items-center fixed">
+      <nav className="px-4 py-2 w-full bg-brandingColor-900 flex juxtify-center lg:justify-between items-center fixed z-10">
         <Image
           src={deepDiveOdysseyLogo}
           alt="Logo da Deep Dive Odyssey"
           priority
           className="h-10 w-auto"
         />
-        <div className=" flex gap-4 items-center text-xs">
+        <div className="hidden lg:flex gap-4 items-center text-xs">
           <Link
             href={HOME_ROUTE}
             className={`${

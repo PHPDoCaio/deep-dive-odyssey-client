@@ -1,20 +1,48 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: ["class"],
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
+      },
+    },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        keyframes: {
+          "accordion-down": {
+            from: { height: "0" },
+            to: { height: "var(--radix-accordion-content-height)" },
+          },
+          "accordion-up": {
+            from: { height: "var(--radix-accordion-content-height)" },
+            to: { height: "0" },
+          },
+        },
+        animation: {
+          "accordion-down": "accordion-down 0.2s ease-out",
+          "accordion-up": "accordion-up 0.2s ease-out",
+        },
+        brandingColor: {
+          400: "#85B6FF",
+          700: "#408CB9",
+          800: "#0F6EA7",
+          900: "#002051",
+          950: "#06103E",
+          1000: "#0B002B",
+        },
       },
     },
   },
-  plugins: [],
-}
-export default config
+  plugins: [require("tailwindcss-animate")],
+};
+export default config;
